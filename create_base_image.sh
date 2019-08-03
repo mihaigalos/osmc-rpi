@@ -26,5 +26,5 @@ rm -f "${DOWNLOAD_DIR}/OSMC_${OSMC_VERSION}.img" # remove image
 
 # create the docker image from the filesystem
 # create the OSMC base image
-cat "${EXTRACT_DIR}/filesystem.tar.xz" | docker import - "codafog/osmc-rpi:base_${OSMC_VERSION}"
+cat "${EXTRACT_DIR}/filesystem.tar.xz" | docker import - "mihaigalos/osmc-rpi:base_${OSMC_VERSION}"
 rm -f "${EXTRACT_DIR}/filesystem.tar.xz" # remove filesystem
