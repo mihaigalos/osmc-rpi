@@ -17,11 +17,18 @@ It's really experimental, don't expect a real working OSMC version.
 
 ### Usage
 ```
-        docker run -it --name osmc-rpi --device="/dev/tty1" --device="/dev/fb0" --device="/dev/input" \
-      --device="/dev/snd" --device="/dev/vchiq" \
-      -v /etc/localtime:/etc/localtime:ro -v /etc/timezone:/etc/timezone:ro \
-      -v /home/pi/osmc-rpi/config:/config/kodi  -v /home/pi/osmc-rpi/data:/data \
-      --net=host mihaigalos/osmc-rpi
+docker run -it \
+  --name osmc-rpi \
+  --device="/dev/tty1" \
+  --device="/dev/fb0" \
+  --device="/dev/input" \
+  --device="/dev/snd" \
+  --device="/dev/vchiq" \
+  -v /etc/localtime:/etc/localtime:ro \
+  -v /etc/timezone:/etc/timezone:ro \
+  -v /home/pi/osmc-rpi/config:/config/kodi \
+  -v /home/pi/osmc-rpi/data:/data \
+  --net=host mihaigalos/osmc-rpi
 ```
 
 ### Building images
