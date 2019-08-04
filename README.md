@@ -1,7 +1,6 @@
 ## osmc-rpi Dockerfile
 
 This repository contains **Dockerfile** of a dockerized [OSMC](https://osmc.tv).
-It's really experimental, don't expect a real working OSMC version.
 
 ### Installation
 
