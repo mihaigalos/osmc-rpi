@@ -28,7 +28,9 @@ docker run -it \
   -v /etc/timezone:/etc/timezone:ro \
   -v /home/pi/osmc-rpi/config:/config/kodi \
   -v /home/pi/osmc-rpi/data:/data \
-  --net=host mihaigalos/osmc-rpi
+  --net=host
+  mihaigalos/osmc-rpi
+  /bin/bash
 ```
 
 ### Building images
