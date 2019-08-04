@@ -4,11 +4,13 @@ set -u
 set -x
 
 function set_variables {
+  homedir=~
+  eval homedir=$homedir
   OSMC_VERSION=20190623
   OSMC_URL="http://download.osmc.tv/installers/diskimages/OSMC_TGT_rbp2_${OSMC_VERSION}.img.gz"
-  DOWNLOAD_DIR=/home/osmc/Downloads
-  EXTRACT_DIR=/home/osmc/Downloads/DockerImages
-  MOUNT_DIR=/home/osmc/Downloads/DockerImagesMnt/
+  DOWNLOAD_DIR=$homedir/Downloads
+  EXTRACT_DIR=$homedir/Downloads/DockerImages
+  MOUNT_DIR=$homedir/Downloads/DockerImagesMnt/
   LOOP_DEV=/dev/loop1 # Loop device used for mounting .img file
   echo ""
 }
