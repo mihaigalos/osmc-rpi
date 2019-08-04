@@ -1,5 +1,5 @@
 ARG OSMC_VERSION=20190623
-FROM codafog/osmc-rpi:base_${OSMC_VERSION}
+FROM mihaigalos/osmc-rpi:base_${OSMC_VERSION}
 
 # Enable systemd
 ENV INITSYSTEM on
