@@ -37,27 +37,33 @@ docker run -it \
 
 2. Clone the Git :
 ```
-    git clone https://github.com/mihaigalos/osmc-rpi.git
+  git clone https://github.com/mihaigalos/osmc-rpi.git
 ```
 3. Execute the script that download and build the OSMC base image. You can choose your version with the OSMC_VERSION variable in the script :
 ```
-    cd osmc-rpi
-    chmod +x ./create_base_image.sh
-    ./create_base_image.sh
-    docker images
+  cd osmc-rpi
+  chmod +x ./create_base_image.sh
+  ./create_base_image.sh
+  docker images
 ```
 4. Build the new image based on your version :
 ```
-    OSMC_VERSION=20170803
-    docker build -t "mihaigalos/osmc-rpi:${OSMC_VERSION}" --build-arg OSMC_VERSION=${OSMC_VERSION} .
+  OSMC_VERSION=20170803
+  docker build -t "mihaigalos/osmc-rpi:${OSMC_VERSION}" --build-arg OSMC_VERSION=${OSMC_VERSION} .
 ```
 5. Start your new OSMC container :
 ```
-    docker run -it --name osmc-rpi --device="/dev/tty1" --device="/dev/fb0" --device="/dev/input" \
-      --device="/dev/snd" --device="/dev/vchiq" \
-      -v /etc/localtime:/etc/localtime:ro -v /etc/timezone:/etc/timezone:ro \
-      -v /home/pi/osmc/config:/config/kodi  -v /home/pi/osmc/data:/data \
-      --net=host "mihaigalos/osmc-rpi:${OSMC_VERSION}"
+docker run -it --name osmc-rpi \
+  --device="/dev/tty1" \
+  --device="/dev/fb0" \
+  --device="/dev/input" \
+  --device="/dev/snd" \
+  --device="/dev/vchiq" \
+  -v /etc/localtime:/etc/localtime:ro \
+  -v /etc/timezone:/etc/timezone:ro \
+  -v /home/pi/osmc/config:/config/kodi \
+  -v /home/pi/osmc/data:/data \
+  --net=host "mihaigalos/osmc-rpi:${OSMC_VERSION}"
 ```
 6. Enjoy playing with OSMC.
 
