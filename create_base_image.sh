@@ -1,4 +1,7 @@
-#!/bin/bash
+#! /bin/bash
+set -e
+set -u
+set -x
 
 OSMC_VERSION=20190623
 OSMC_URL="http://download.osmc.tv/installers/diskimages/OSMC_TGT_rbp2_${OSMC_VERSION}.img.gz"
